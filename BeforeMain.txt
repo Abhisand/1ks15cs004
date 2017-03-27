@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+void show()
+{
+    cout<<"Before Main";
+}
+static int BM=(add(),0);
+
+int main()
+{
+    cout << "\nAfter main" << endl;
+    return 0;
+}
+
