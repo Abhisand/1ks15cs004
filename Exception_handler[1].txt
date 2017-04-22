@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package assignment;
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Abhishek
+ */
+public class Exception_Handler 
+{
+    public static void main(String[] args) 
+    {
+        Random R=new Random();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the No of Random No to be Genareted:");
+        int n=sc.nextInt();
+        System.out.println("Range:");
+        int range=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            int random=R.nextInt(range);
+            new demo().read(random);
+        }
+    }
+   
+}
+class demo
+{
+    void read(int n)
+    {
+        
+        try{
+            int p1=1/(n%100000);
+            int p2=1/(n%10000);
+            int p3=1/(n%1000);
+            int p4=1/(n%100);
+            int p5=1/(n%10);
+            double Resiprocal=p1+p2+p3+p4+p5;
+            }
+        catch(Exception e) {System.out.println("\n-->"+n+" Contains Zero Exception!\n"+e);}
+    }
+}
